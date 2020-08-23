@@ -1,0 +1,20 @@
+//mixins
+@mixin r($point) {
+  @media (max-width: $point + px) {
+    @content;
+  }
+}
+
+@mixin rm($point) {
+  @media (min-width: $point + px) {
+    @content;
+  }
+}
+
+@mixin pseudo {
+  content: '';
+  position: absolute;
+}
+
+//vars
+$t: .3s;
