@@ -1,8 +1,8 @@
 
 html {
-  font-family: sans-serif; /* 1 */
-  -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 
@@ -32,8 +32,8 @@ audio,
 canvas,
 progress,
 video {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 
@@ -143,9 +143,9 @@ input,
 optgroup,
 select,
 textarea {
-  color: inherit; /* 1 */
-  font: inherit; /* 2 */
-  margin: 0; /* 3 */
+  color: inherit;
+  font: inherit;
+  margin: 0;
 }
 
 
@@ -161,11 +161,11 @@ select {
 
 
 button,
-html input[type="button"], /* 1 */
+html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button; /* 2 */
-  cursor: pointer; /* 3 */
+  -webkit-appearance: button;
+  cursor: pointer;
 }
 
 
@@ -188,8 +188,8 @@ fieldset {
 }
 
 legend {
-  border: 0; /* 1 */
-  padding: 0; /* 2 */
+  border: 0;
+  padding: 0;
 }
 
 optgroup {
@@ -209,6 +209,7 @@ th {
 * {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  //max-width: 100%; // fix for ie 11
 }
 
 
@@ -242,4 +243,9 @@ video,
 button,
 a {
   user-select: none;
+}
+
+input{
+  border: none;
+  outline: none;
 }

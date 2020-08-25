@@ -11,12 +11,18 @@
   }
 }
 
-@mixin pseudo {
-  content: '';
-  position: absolute;
-}
-
 //vars
-$t: .3s;
-$druk: 'DrukWide';
+$t3: .3s;
+$t2: .2s;
+
+$druk: 'DrukWideCyTTSuper';
 $lovelace: 'Lovelace';
+
+$d: 0.0694445vw;
+//$d: 0.055vw;
+$dModal: 0.055vw;
+
+$m: 0.266525vw;
+
+$white: #ffffff;
+$black: #000000;

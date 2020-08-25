@@ -12,15 +12,202 @@
 
 <header class="header">
     <div class="header-wrapper">
-        <img src="" class="header-logo">
-        <div class="header-menu">
+        <img src="./images/src/logo.svg" class="header-logo">
+        <div class="header-menu menu">
+            <div class="menu-close"></div>
             <a href="#">Услуги</a>
             <a href="#">Проекты</a>
             <a href="#">Контакты</a>
         </div>
-        <img class="header-button">
+        <div class="header-button">
+            <span></span>
+            <span></span>
+        </div>
     </div>
 </header>
+<section class="main wrapper">
+    <div class="main-headline">
+        Развиваем бизнесы и бренды онлайн
+    </div>
+    <div class="main-title">
+        Подходим комплексно. Ориентированы на результат.
+    </div>
+    <form class="main-form" id="numberForm">
+        <input placeholder="+ 38 (" type="text" class="main-input">
+        <button class="btn main-btn" type="submit">
+            <span>Перезвоните мне</span>
+        </button>
+    </form>
+</section>
+<section class="steps wrapper">
+    <div class="steps-headline">
+        Как мы развиваем Ваш бизнес?
+    </div>
+    <div class="steps-content">
+        <div class="steps-item">
+            <div class="steps-number">1</div>
+            <div class="steps-text">
+                Подходим комплексно. Ориентированы на результат.
+            </div>
+        </div>
+        <div class="steps-item">
+            <div class="steps-number">2</div>
+            <div class="steps-text">
+                Подходим комплексно. Ориентированы на результат.
+            </div>
+        </div>
+        <div class="steps-item">
+            <div class="steps-number">3</div>
+            <div class="steps-text">
+                Подходим комплексно. Ориентированы на результат.
+            </div>
+        </div>
+    </div>
+</section>
+<section class="modals">
+    <div class="modals-top wrapper">
+        К нам обращаются <br>
+        когда необходимо:
+    </div>
+    <div class="modals-bottom">
+        <div class="modals-left">
+            <div class="modals-open" id="openSiteModal">
+                <img src="./images/src/arrow.svg">
+            </div>
+            <div class="modals-text">
+                Создать <br>
+                сайт <br> <br>
+            </div>
+        </div>
+        <div class="modals-right">
+            <div class="modals-open" id="openSystemModal">
+                <img src="./images/src/arrow.svg">
+            </div>
+            <div class="modals-text">
+                Создать автоматизированую <br>
+                систему
+            </div>
+        </div>
+    </div>
+</section>
+<section class="projects">
+    <div class="projects-headline wrapper">
+        Проекты:
+    </div>
+    <div class="projects-slider">
+        <div class="projects-item">
+            <div class="projects-left">
+                <div class="projects-top">презентация агентства experiential-маркетинга</div>
+                <div class="projects-bottom">
+                    <div class="projects-partner">
+                        <div class="projects-title">
+                            клиент
+                        </div>
+                        <span>
+                        Young
+                    </span>
+                    </div>
+                    <div class="projects-description">
+                        <div class="projects-title">
+                            задача
+                        </div>
+                        <span>
+                        Наши друзья из YOUNG попросили помочь им с презентацией про их агентство. После короткой
+                        переписки мы поняли, что речь в презентации пойдёт о людях. Ярких, необычных и готовых выполнить
+                        любой заказ. Так получилась контрастная презентация с чётким сообщением: «Мы сможем выполнить
+                        ваш заказ, не сомневайтесь!». Вышло так здорово, что ребята до сих пор используют её на
+                        конференциях, бизнес-завтраках и презентуют клиентам.
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <img src="./images/src/slider1.png" class="projects-right">
+        </div>
+        <div class="projects-item">
+            <div class="projects-left">
+                <div class="projects-top">презентация агентства experiential-маркетинга</div>
+                <div class="projects-bottom">
+                    <div class="projects-partner">
+                        <div class="projects-title">
+                            клиент
+                        </div>
+                        <span>
+                        Young
+                    </span>
+                    </div>
+                    <div class="projects-description">
+                        <div class="projects-title">
+                            задача
+                        </div>
+                        <span>
+                        Наши друзья из YOUNG попросили помочь им с презентацией про их агентство. После короткой
+                        переписки мы поняли, что речь в презентации пойдёт о людях. Ярких, необычных и готовых выполнить
+                        любой заказ. Так получилась контрастная презентация с чётким сообщением: «Мы сможем выполнить
+                        ваш заказ, не сомневайтесь!». Вышло так здорово, что ребята до сих пор используют её на
+                        конференциях, бизнес-завтраках и презентуют клиентам.
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <img src="./images/src/slider1.png" class="projects-right">
+        </div>
+    </div>
+    <div class="projects-arrows">
+        <img draggable="false" class="projects-arrows-left" src="./images/src/arrow-left.svg">
+        <div class="projects-arrows-line"></div>
+        <img draggable="false" class="projects-arrows-right" src="./images/src/arrow-right.svg">
+    </div>
+    <div class="projects-chev">
+        <img draggable="false" class="projects-chev-left" src="./images/src/chevLeft.svg">
+        <img draggable="false" class="projects-chev-right" src="./images/src/chevRight.svg">
+    </div>
+</section>
+
+
+<div class="modal" id="siteModal">
+    <div class="modal-title">
+        Мы помогаем создать:
+    </div>
+    <div class="modal-content">
+        <div class="modal-item">Landing-page</div>
+        <div class="modal-item">Интернет-магазин</div>
+        <div class="modal-item">Сайт визитку</div>
+        <div class="modal-item">Техническая поддержка сайтов</div>
+        <div class="modal-item">Корпоративные сайты</div>
+        <div class="modal-item">Настройку таргетинговой рекламы</div>
+        <div class="modal-item">Каталог сайт</div>
+        <div class="modal-item">Подключение веб-аналитики</div>
+        <div class="modal-item">Создание отчетов</div>
+    </div>
+    <div class="btn modal-btn">
+            <span>
+                Хочу создать сайт
+            </span>
+    </div>
+    <div class="modal-close">
+        <img src="./images/src/arrow-black.svg">
+    </div>
+</div>
+<div class="modal" id="systemModal">
+    <div class="modal-title">
+        Создать <br>
+        автоматизированую <br>
+        систему
+    </div>
+    <div class="modal-content column">
+        <div class="modal-item">CRM системы</div>
+        <div class="modal-item">BPM системы</div>
+        <div class="modal-item">ERP системы</div>
+    </div>
+    <div class="btn modal-btn">
+            <span>
+                Перезвоните мне
+            </span>
+    </div>
+    <div class="modal-close">
+        <img src="./images/src/arrow-black.svg">
+    </div>
+</div>
 
 
 <script src="js/app.min.js"></script>

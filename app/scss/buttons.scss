@@ -1,0 +1,74 @@
+.btn {
+  width: 396 * $d;
+  height: 95 * $d;
+  border: 1 * $d solid #000000;
+  color: #181621;
+  font-family: $druk;
+  font-size: 20 * $d;
+  font-weight: 400;
+  letter-spacing: 1 * $d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  @include r(480) {
+    width: 320 * $m;
+    height: 72 * $m;
+    font-size: 15 * $m;
+    letter-spacing: 0.75 * $m;
+    border: 1 * $m solid #000000;
+  }
+
+  span {
+    z-index: 2;
+  }
+
+  &:after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+  }
+
+  &:before {
+    content: "";
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: #FBFF34;
+    transition: height $t2;
+  }
+
+  &:hover {
+    &:before {
+      height: 100%;
+      transition: height $t2;
+    }
+  }
+
+  &.modal-btn {
+    width: 396 * $dModal;
+    height: 95 * $dModal;
+    border: 1 * $dModal solid #000000;
+    font-size: 20 * $dModal;
+    letter-spacing: 1 * $dModal;
+
+    @include r(480) {
+      width: 320 * $m;
+      height: 72 * $m;
+      font-size: 15 * $m;
+      letter-spacing: 0.75 * $m;
+      border: 1 * $m solid #000000;
+    }
+
+  }
+}

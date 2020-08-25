@@ -1,38 +1,66 @@
 const $w = $(window);
+const $header = $('.header');
+const $headerButton = $('.header-button');
+const $html$body = $('html, body');
+
+function toggleOverflow() {
+    return $html$body.toggleClass('owf-hidden', !$html$body.hasClass('owf-hidden'));
+}
+
 $w.on('load', function () {
-    (function googleAnalytics() {
-        window.ga = window.ga || function () {
-            (ga.q = ga.q || []).push(arguments)
-        };
-        ga.l = +new Date;
+    (function headerScroll() {
+        $w.on('scroll', function () {
+            let scroll = getCurrentScroll();
+            $header.toggleClass('shrink', scroll >= 1)
+        });
 
-        $("*[data-ga]").on("click", function () {
-            let $this = $(this);
-            ga('send', 'event', {
-                eventCategory: $this.attr("data-ga"),
-                eventAction: "click"
-            });
+        function getCurrentScroll() {
+            return window.pageYOffset || document.documentElement.scrollTop;
+        }
+    })();
+
+    (function toggleMenu() {
+        $headerButton.on('click', function () {
+            $header.toggleClass('menu-active', !$header.hasClass('menu-active'));
+            toggleOverflow();
+        });
+
+        $('.menu-close').on('click', function () {
+            return $headerButton.trigger('click');
         });
     })();
 
-    (function kibana() {
-        $("*[data-kibana_message]").on("click", function () {
-            let $this = $(this);
-            var dataJSON = {
-                user_id: $('[data-user-id]').data('user-id') || 'anonim',
-                item_id: "t&bMax",
-                message: $this.attr("data-kibana_message"),
-                geo: $('html').data('geo'),
-                url: window.location.href,
-                rnd: Math.random()
-            };
+    (function maskedInput() {
+        $('.main-input').mask("+ 38 (999) 999 99 99");
+    })();
 
-            var log_json = {
-                text: 'LANDING_STAT',
-                data: JSON.stringify(dataJSON)
-            };
+    (function modal() {
+        $('#openSiteModal').on('click', function () {
+            $('#siteModal').addClass('active');
+            toggleOverflow();
+        });
 
-            $.post("https://log.cnt.re/log/site_message", log_json);
+        $('#openSystemModal').on('click', function () {
+            $('#systemModal').addClass('active');
+            toggleOverflow();
+        });
+
+        $('.modal-close').on('click', function () {
+            $(this).closest('.modal').removeClass('active');
+            toggleOverflow();
         });
     })();
+
+    (function modal() {
+        $('.projects-slider').slick({
+            dots: false,
+            infinite: false,
+            arrows: true,
+            prevArrow: $('.projects-arrows-left, .projects-chev-left'),
+            nextArrow: $('.projects-arrows-right, .projects-chev-right')
+        })
+    })();
+
+
+    $w.trigger('scroll');
 });

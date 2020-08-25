@@ -1,0 +1,240 @@
+.modal {
+  z-index: 20;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("../images/src/pattern.png");
+  background-size: cover;
+  padding: 0 50 * $dModal;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity $t3, transform $t3;
+
+  @include r(480) {
+    padding: 0 30 * $m;
+    min-height: 100%;
+    overflow-y: scroll;
+  }
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity $t3, transform $t3;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+
+    @include r(480) {
+      background-image: none !important;
+    }
+  }
+
+  &#siteModal {
+    background-color: #ac54f1;
+
+    &:before {
+      background-image: url("../images/src/modal1bg.svg");
+      background-size: 160 * $dModal 259 * $dModal;
+      background-position-y: 27vw;
+      background-position-x: 85vw;
+    }
+  }
+
+  &#systemModal {
+    background-color: #e0d2ac;
+
+    &:before {
+      background-image: url("../images/src/modal2bg.svg");
+      background-size: 381 * $dModal 353 * $dModal;
+      background-position-y: 15vw;
+      background-position-x: calc(100% - 7vw);
+    }
+  }
+
+  &-title {
+    color: #000000;
+    font-family: $druk;
+    font-size: 52 * $dModal;
+    font-weight: 400;
+    letter-spacing: 2.6 * $dModal;
+    margin-top: 75 * $dModal;
+
+    @include r(480) {
+      font-size: 32* $m;
+      letter-spacing: 1.6* $m;
+      margin-top: 51 * $m;
+      word-break: break-word;
+    }
+  }
+
+  &-content {
+    margin-top: 85 * $dModal;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+
+    &.column {
+      flex-direction: column;
+    }
+
+    @include r(480) {
+      flex-direction: column;
+    }
+  }
+
+  &-item {
+    color: #000000;
+    font-family: $lovelace;
+    font-size: 28* $dModal;
+    font-weight: 500;
+    letter-spacing: 1.4* $dModal;
+    line-height: 67.12* $dModal;
+    width: 50%;
+    padding-right: 30* $dModal;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include r(480) {
+      width: 100%;
+      padding-right: 30* $m;
+      font-size: 18* $m;
+      letter-spacing: 0.9* $m;
+      line-height: 43.15* $m;
+      align-items: flex-start;
+    }
+
+    &:before {
+      content: "";
+      position: relative;
+      width: 13* $dModal;
+      height: 13* $dModal;
+      min-width: 13* $dModal;
+      min-height: 13* $dModal;
+      border-radius: 100%;
+      border: 1* $dModal solid #000000;
+      background-color: #ff3f3f;
+      margin-right: 17 * $dModal;
+      box-sizing: border-box;
+
+      @include r(480) {
+        width: 10 * $m;
+        height: 10 * $m;
+        min-width: 10 * $m;
+        min-height: 10 * $m;
+        border: 1 * $m solid #000000;
+        margin-right: 13 * $m;
+        margin-top: 17 * $m;
+      }
+    }
+
+    &:nth-child(1) {
+      &:before {
+        background-color: #ff3f3f;
+      }
+    }
+
+    &:nth-child(2) {
+      &:before {
+        background-color: #03b8ff;
+      }
+    }
+
+    &:nth-child(3) {
+      &:before {
+        background-color: #f5e901;
+      }
+    }
+
+    &:nth-child(4) {
+      &:before {
+        background-color: #f85aff;
+      }
+    }
+
+    &:nth-child(5) {
+      &:before {
+        background-color: #76ce57;
+      }
+    }
+
+    &:nth-child(6) {
+      &:before {
+        background-color: #f5e901;
+      }
+    }
+
+    &:nth-child(7) {
+      &:before {
+        background-color: #ef789e;
+      }
+    }
+
+    &:nth-child(8) {
+      &:before {
+        background-color: #76ce57;
+      }
+    }
+
+    &:nth-child(9) {
+      &:before {
+        background-color: #ef789e;
+      }
+    }
+  }
+
+  &-btn {
+    margin: 122 * $dModal auto 0 auto;
+
+    @include r(480){
+      margin: 35 * $m auto;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 120 * $dModal;
+    height: 120 * $dModal;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @include r(480) {
+      width: 68* $m;
+      height: 68* $m;
+    }
+
+    &:hover {
+      img {
+        transform: rotate(360deg);
+        transition: transform $t3;
+      }
+    }
+
+    img {
+      width: 80 * $dModal;
+      height: 80 * $dModal;
+      transform: rotate(180deg);
+      transition: transform $t3;
+
+      @include r(480) {
+        width: 42* $m;
+        height: 42* $m;
+      }
+    }
+  }
+}
