@@ -15,9 +15,9 @@
         <img src="./images/src/logo.svg" class="header-logo">
         <div class="header-menu menu">
             <div class="menu-close"></div>
-            <a href="#">Услуги</a>
-            <a href="#">Проекты</a>
-            <a href="#">Контакты</a>
+            <a data-href="#services">Услуги</a>
+            <a data-href="#projects">Проекты</a>
+            <a data-href="#contacts">Контакты</a>
         </div>
         <div class="header-button">
             <span></span>
@@ -33,7 +33,7 @@
         Подходим комплексно. Ориентированы на результат.
     </div>
     <form class="main-form" id="numberForm">
-        <input placeholder="+ 38 (" type="text" class="main-input">
+        <input required placeholder="+ 38 (" type="text" class="main-input">
         <button class="btn main-btn" type="submit">
             <span>Перезвоните мне</span>
         </button>
@@ -64,7 +64,7 @@
         </div>
     </div>
 </section>
-<section class="modals">
+<section id="services" class="modals">
     <div class="modals-top wrapper">
         К нам обращаются <br>
         когда необходимо:
@@ -90,7 +90,7 @@
         </div>
     </div>
 </section>
-<section class="projects">
+<section id="projects" class="projects">
     <div class="projects-headline wrapper">
         Проекты:
     </div>
@@ -160,6 +160,21 @@
     <div class="projects-chev">
         <img draggable="false" class="projects-chev-left" src="./images/src/chevLeft.svg">
         <img draggable="false" class="projects-chev-right" src="./images/src/chevRight.svg">
+    </div>
+</section>
+<section id="contacts" class="contacts">
+    <div class="contacts-wrapper wrapper">
+        <div class="contacts-top">
+            <div class="contacts-title">Напишите нам и мы перезвоним</div>
+            <div class="contacts-image"></div>
+        </div>
+        <form class="contacts-form">
+            <input required type="text" placeholder="Имя">
+            <input required type="text" placeholder="Номер телефона">
+            <input required type="email" placeholder="E-mail">
+            <button class="btn" type="submit"><span>Перезвоните мне</span></button>
+        </form>
+        <img src="./images/src/logo.svg" class="contacts-logo">
     </div>
 </section>
 

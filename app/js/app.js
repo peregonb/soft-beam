@@ -32,6 +32,7 @@ $w.on('load', function () {
 
     (function maskedInput() {
         $('.main-input').mask("+ 38 (999) 999 99 99");
+        $('.contacts-form input:nth-child(2)').mask("+38(999) 999 99 99");
     })();
 
     (function modal() {
@@ -51,7 +52,7 @@ $w.on('load', function () {
         });
     })();
 
-    (function modal() {
+    (function slider() {
         $('.projects-slider').slick({
             dots: false,
             infinite: false,
@@ -60,6 +61,18 @@ $w.on('load', function () {
             nextArrow: $('.projects-arrows-right, .projects-chev-right')
         })
     })();
+
+    (function anchorScrolling() {
+        $("*[data-href]").on("click", function (e) {
+            e.preventDefault();
+            const id = $(this).attr('data-href'),
+                top = $(id).offset().top;
+            $('body,html').animate({
+                scrollTop: top - $header.height() + 1
+            }, 1500);
+            $header.hasClass('menu-active') && $headerButton.trigger('click')
+        });
+    })()
 
 
     $w.trigger('scroll');

@@ -2,12 +2,6 @@ html, body {
   &.owf-hidden {
     overflow: hidden !important;
   }
-
-  cursor: url('../images/src/cursor.svg'), auto !important;
-
-  * {
-    cursor: url('../images/src/cursor.svg'), auto !important;
-  }
 }
 
 .wrapper {
@@ -46,7 +40,7 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 19;
   height: 152 * $d;
   overflow: hidden;
   transition: height $t3, background-color $t2;
@@ -331,6 +325,12 @@ html, body {
     background-color: transparent;
     border-bottom: 1 * $d solid $white;
     width: 100%;
+    transition: border-color $t3;
+
+    &.error {
+      border-color: #ff3f3f;
+      transition: border-color $t3;
+    }
 
     @include r(480) {
       font-size: 28 * $m;
@@ -523,7 +523,7 @@ html, body {
 .modals {
 
   &-top {
-    color: #ffffff;
+    color: $white;
     font-family: $druk;
     font-size: 65 * $d;
     font-weight: 400;
@@ -760,6 +760,8 @@ html, body {
 
     @include r(480) {
       margin: 36 * $m 20 * $m 30 * $m;
+      flex-direction: column;
+
     }
   }
 
@@ -783,9 +785,8 @@ html, body {
     width: 310 * $d;
 
     @include r(480) {
-      width: 130 * $m;
-      min-width: 130 * $m;
-      padding-right: 20 * $m;
+      width: 100%;
+      margin-bottom: 15 * $m;
     }
 
     span {
@@ -808,7 +809,7 @@ html, body {
     width: 310 * $d;
 
     @include r(480) {
-      width: 205 * $m;
+      width: 100%;
     }
 
     span {
@@ -851,6 +852,7 @@ html, body {
       height: 38* $d;
       padding: 0 25* $d;
       box-sizing: content-box;
+      cursor: pointer;
 
       @include r(480) {
         width: 55* $m;
@@ -897,11 +899,161 @@ html, body {
       width: 47* $d;
       height: 82* $d;
       box-sizing: content-box;
+      cursor: pointer;
 
       &.slick-disabled {
         opacity: .2;
         pointer-events: none;
       }
+    }
+  }
+}
+
+
+.contacts {
+  background-color: #181621;
+  background-image: url("../images/src/mesh.svg");
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 931* $d 934* $d;
+  @include r(480) {
+    background-image: none;
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    background-image: url("../images/src/contacts-bg.png");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 782* $d 678* $d;
+
+    @include r(480) {
+      background-image: none;
+    }
+  }
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 72 * $d;
+    @include r(480) {
+
+    }
+  }
+
+  &-title {
+    color: $white;
+    font-family: $druk;
+    font-size: 24* $d;
+    font-weight: 400;
+    letter-spacing: 1.2* $d;
+
+    @include r(480) {
+      font-size: 14* $m;
+      font-weight: 400;
+      letter-spacing: 0.7* $m;
+      margin-top: 5 * $m;
+    }
+  }
+
+  &-image {
+    background-image: url("../images/src/logo.svg");
+    width: 321 * $d;
+    height: 58 * $d;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include r(480) {
+      background-image: url("../images/src/contact.svg");
+      width: 69* $m;
+      min-width: 69 *$m;
+      height: 59* $m;
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30 * $d;
+    margin-bottom: 220 * $d;
+
+    @include r(480) {
+      width: 100%;
+
+      margin-top: 32 * $m;
+      margin-bottom: 70 * $m;
+    }
+
+    .btn {
+      margin-top: 74 * $d;
+
+      @include r(480) {
+        margin-top: 46 * $m;
+        width: 100%;
+      }
+    }
+
+    input {
+      width: 100%;
+      max-width: 634* $d;
+      border-bottom: 7* $d solid $white;
+      background-color: transparent;
+      height: 99 * $d;
+
+      color: #ffffff;
+      font-family: $lovelace;
+      font-size: 56* $d;
+      font-weight: 500;
+      letter-spacing: 2.8* $d;
+      transition: border-color $t3;
+
+      @include r(480) {
+        max-width: 100%;
+        font-size: 28* $m;
+        letter-spacing: 1.4* $m;
+        height: 48 * $m;
+      }
+
+      &.error {
+        border-color: #ff3f3f;
+        transition: border-color $t3;
+      }
+
+      &::placeholder {
+        color: #ffffff;
+        font-family: $lovelace;
+        font-size: 56* $d;
+        font-weight: 500;
+        letter-spacing: 2.8* $d;
+
+        @include r(480) {
+          font-size: 28* $m;
+          letter-spacing: 1.4* $m;
+        }
+      }
+
+      &:not(:nth-child(1)) {
+        margin-top: 40* $d;
+
+        @include r(480) {
+          margin-top: 25 * $m;
+        }
+      }
+    }
+
+  }
+
+  &-logo {
+    display: none;
+    @include r(480) {
+      display: flex;
+      width: 109* $m;
+      height: 20* $m;
+      margin: 0 auto 26 * $m auto;
     }
   }
 }
