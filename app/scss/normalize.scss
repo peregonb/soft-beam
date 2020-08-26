@@ -249,4 +249,9 @@ input{
   border: none;
   outline: none;
   -webkit-appearance: none;
+
+  &:focus{
+    border: none;
+    outline: none;
+  }
 }

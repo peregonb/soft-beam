@@ -220,7 +220,7 @@
 
     &:hover {
       img {
-        transform: rotate(360deg);
+        transform: rotate(90deg);
         transition: transform $t3;
       }
     }
@@ -228,7 +228,7 @@
     img {
       width: 80 * $dModal;
       height: 80 * $dModal;
-      transform: rotate(180deg);
+      transform: rotate(0deg);
       transition: transform $t3;
 
       @include r(480) {

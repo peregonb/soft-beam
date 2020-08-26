@@ -623,7 +623,7 @@ html, body {
 
     &:hover {
       img {
-        transform: rotate(90deg);
+        transform: rotate(0deg);
         transition: transform $t3;
       }
     }
@@ -631,6 +631,7 @@ html, body {
     img {
       width: 80 * $d;
       height: 80 * $d;
+      transform: rotate(90deg);
       transition: transform $t3;
 
       @include r(480) {
