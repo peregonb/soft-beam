@@ -701,6 +701,7 @@ html, body {
     display: flex !important;
     justify-content: flex-end;
     position: relative;
+    align-items: flex-end;
 
     @include r(480) {
       flex-direction: column;
@@ -711,9 +712,8 @@ html, body {
 
   &-left {
     width: 723 * $d;
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: relative;
+    transform: translateX(70 * $d);
     min-width: 50vw;
 
     @include r(480) {
@@ -816,6 +816,7 @@ html, body {
       font-size: 16* $d;
       font-weight: 500;
       letter-spacing: 0.8* $d;
+      display: flex;
 
       @include r(480) {
         font-size: 14* $m;
