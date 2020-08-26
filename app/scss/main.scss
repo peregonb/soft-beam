@@ -510,6 +510,8 @@ html, body {
     text-align: center;
     margin-top: 30 * $d;
 
+    max-width: 100%; //fix IE
+
     @include r(480) {
       font-size: 18 * $m;
       letter-spacing: 0.9 * $m;
